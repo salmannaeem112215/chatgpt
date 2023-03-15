@@ -1,4 +1,5 @@
 import 'package:chatgpt/constants/constants.dart';
+import 'package:chatgpt/widgets/chat_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
@@ -32,7 +33,10 @@ class _BodyState extends State<Body> {
         Flexible(
           child: ListView.builder(
             itemCount: 6,
-            itemBuilder: (context, index) => const Text('Hello! How Are you'),
+            itemBuilder: (context, index) => ChatWidget(
+              msg: chatMessages[index]["msg"] as String,
+              chatIndex: chatMessages[index]['chatIndex'] as int,
+            ),
           ),
         ),
         if (_isTyping) ...[
