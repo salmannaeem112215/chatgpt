@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'constants/constants.dart';
-import 'screens/chat_screen.dart';
+import './constants/constants.dart';
+import './screens/chat/chat_screen.dart';
 
 void main() {
   runApp(const MyApp());
