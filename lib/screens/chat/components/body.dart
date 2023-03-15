@@ -34,8 +34,8 @@ class _BodyState extends State<Body> {
           child: ListView.builder(
             itemCount: 6,
             itemBuilder: (context, index) => ChatWidget(
-              msg: chatMessages[index]["msg"] as String,
-              chatIndex: chatMessages[index]['chatIndex'] as int,
+              msg: chatMessages[index]["msg"].toString(),
+              chatIndex: int.parse(chatMessages[index]['chatIndex'].toString()),
             ),
           ),
         ),
