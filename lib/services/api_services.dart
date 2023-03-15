@@ -8,7 +8,7 @@ class ApiServices {
   static Future<void> getModel() async {
     try {
       var response = await http.get(
-        Uri.parse("$BASE_URL/modelss"),
+        Uri.parse("$BASE_URL/models"),
         headers: {"Authorization": "Bearer $OPENAI_API_KEY"},
       );
       Map jsonResponse = jsonDecode(response.body);
