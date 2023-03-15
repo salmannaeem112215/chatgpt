@@ -1,9 +1,6 @@
-import 'dart:developer';
-
-import 'package:chatgpt/services/services.dart';
-import 'package:chatgpt/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 
+import '../../services/services.dart';
 import '../../constants/constants.dart';
 import '../../services/assets_manager.dart';
 import './components/body.dart';

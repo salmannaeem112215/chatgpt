@@ -1,4 +1,5 @@
 import 'package:chatgpt/constants/constants.dart';
+import 'package:chatgpt/services/api_services.dart';
 import 'package:chatgpt/widgets/chat_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -64,8 +65,8 @@ class _BodyState extends State<Body> {
                     ),
                   ),
                   IconButton(
-                      onPressed: () {
-                        // TODO send button
+                      onPressed: () async {
+                        await ApiServices.getModel();
                       },
                       icon: const Icon(
                         Icons.send,
