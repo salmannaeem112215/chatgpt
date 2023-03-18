@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../models/models_model.dart';
 import '../widgets/text_widget.dart';
 
 Color scaffoldBackgroundColor = const Color(0xFF343541);
@@ -28,6 +29,25 @@ List<DropdownMenuItem<String>>? get getModelsItem {
         fontSize: 15,
       ),
     ),
+  );
+  return modelsItem;
+}
+
+List<DropdownMenuItem<String>>? getModelsDropDownItem(
+    List<ModelsModel> models) {
+  List<DropdownMenuItem<String>>? modelsItem =
+      List<DropdownMenuItem<String>>.generate(
+    models.length,
+    (index) {
+      print(models[index].id);
+      return DropdownMenuItem(
+        value: models[index].id,
+        child: TextWidget(
+          label: models[index].id,
+          fontSize: 15,
+        ),
+      );
+    },
   );
   return modelsItem;
 }

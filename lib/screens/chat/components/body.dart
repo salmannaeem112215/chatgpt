@@ -27,6 +27,10 @@ class _BodyState extends State<Body> {
     super.dispose();
   }
 
+  updateModels() async {
+    await ApiServices.getModels();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -57,6 +61,7 @@ class _BodyState extends State<Body> {
                       style: const TextStyle(color: Colors.white),
                       controller: textEditingController,
                       onSubmitted: (value) {
+                        print('hi');
                         // TODO send message
                       },
                       decoration: const InputDecoration.collapsed(
@@ -65,9 +70,7 @@ class _BodyState extends State<Body> {
                     ),
                   ),
                   IconButton(
-                      onPressed: () async {
-                        await ApiServices.getModel();
-                      },
+                      onPressed: () => updateModels(),
                       icon: const Icon(
                         Icons.send,
                         color: Colors.white,

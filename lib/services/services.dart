@@ -26,7 +26,7 @@ class Services {
                 ),
                 Flexible(
                   flex: 2,
-                  child: ModelsDropDownWidget(),
+                  child: DropDownWidget(),
                 ),
               ],
             ),
