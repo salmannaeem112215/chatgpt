@@ -3,18 +3,11 @@ import 'package:flutter/material.dart';
 
 import './UI_parameters.dart';
 
-TextStyle userText(context) => TextStyle(
-    color: UIParameters.isDarkMode()
-        ? Theme.of(context).textTheme.bodyLarge!.color
-        : Theme.of(context).primaryColor,
-    fontSize: 18,
-    fontWeight: FontWeight.bold);
-TextStyle botText(context) => TextStyle(
-    color: UIParameters.isDarkMode()
-        ? Theme.of(context).textTheme.bodyLarge!.color
-        : Theme.of(context).primaryColor,
-    fontSize: 14,
-    fontWeight: FontWeight.bold);
+TextStyle chatText(context) => TextStyle(
+      color: UIParameters.isDarkMode() ? textColorDark : textColorLight,
+      fontSize: 16,
+      fontWeight: FontWeight.w500,
+    );
 
 const appBarTitleText =
     TextStyle(fontSize: 18, fontWeight: FontWeight.w700, color: iconColor);

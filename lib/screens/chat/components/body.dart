@@ -33,18 +33,17 @@ class _BodyState extends State<Body> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Flexible(
-          child: ListView.builder(
-            itemCount: 6,
-            itemBuilder: (context, index) => ChatWidget(
-              msg: chatMessages[index]["msg"].toString(),
-              chatIndex: int.parse(chatMessages[index]['chatIndex'].toString()),
-            ),
+    return Column(children: [
+      Flexible(
+        child: ListView.builder(
+          itemCount: 6,
+          itemBuilder: (context, index) => ChatWidget(
+            msg: chatMessages[index]["msg"].toString(),
+            chatIndex: int.parse(chatMessages[index]['chatIndex'].toString()),
           ),
         ),
-        // if (_isTyping) ...[
+      ),
+      if (_isTyping) ...[
         const SpinKitThreeBounce(
           color: Colors.white,
           size: 18,
@@ -80,6 +79,6 @@ class _BodyState extends State<Body> {
           ),
         ),
       ],
-    );
+    ]);
   }
 }

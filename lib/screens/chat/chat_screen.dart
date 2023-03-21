@@ -17,12 +17,11 @@ class _ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 2,
         leading: IconButton(
           onPressed: () {},
           icon: const Icon(Icons.menu),
         ),
-        title: const Text('ChatGpt'),
+        title: const Text('Chat Gpt'),
         actions: [
           IconButton(
             onPressed: () async {

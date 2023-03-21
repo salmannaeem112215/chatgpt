@@ -1,4 +1,5 @@
 import 'package:chatgpt/configs/themes/app_color.dart';
+import 'package:chatgpt/configs/themes/custom_text_styles.dart';
 import 'package:chatgpt/constants/constants.dart';
 import 'package:chatgpt/services/assets_manager.dart';
 import 'package:chatgpt/widgets/text_widget.dart';
@@ -15,8 +16,16 @@ class ChatWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: chatIndex == 0 ? primaryColorDark : cardColorDark,
-      child: Padding(
+      color: chatIndex == 0
+          ? customUserChatColor(context)
+          : customBotChatColor(context),
+      child: Container(
+        decoration: BoxDecoration(
+            border: chatIndex == 0
+                ? null
+                : Border.symmetric(
+                    horizontal: BorderSide(
+                        color: Color.fromARGB(29, 0, 0, 0), width: 1))),
         padding: const EdgeInsets.all(8),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -27,7 +36,12 @@ class ChatWidget extends StatelessWidget {
               width: 30,
             ),
             const SizedBox(width: 8),
-            Expanded(child: TextWidget(label: msg)),
+            Expanded(
+              child: Text(
+                msg,
+                style: chatText(context),
+              ),
+            ),
             const SizedBox(width: 8),
             chatIndex == 0
                 ? const SizedBox.shrink()
@@ -37,12 +51,10 @@ class ChatWidget extends StatelessWidget {
                     children: const [
                       Icon(
                         Icons.thumb_up_alt_outlined,
-                        color: Colors.white,
                       ),
                       SizedBox(width: 5),
                       Icon(
                         Icons.thumb_down_alt_outlined,
-                        color: Colors.white,
                       )
                     ],
                   )
