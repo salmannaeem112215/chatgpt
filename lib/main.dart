@@ -9,6 +9,7 @@ import './configs/themes/app_light_theme.dart';
 import './controllers/theme_controller.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   // Get x Controller initialization
   InitialBindings().dependencies();
   runApp(const MyApp());
@@ -27,8 +28,8 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        // theme: LightTheme().buildLigtTheme(),
-        theme: DarkTheme().buildDarkTheme(),
+        theme: LightTheme().buildLigtTheme(),
+        darkTheme: DarkTheme().buildDarkTheme(),
         getPages: AppRoutes.routes());
   }
 }

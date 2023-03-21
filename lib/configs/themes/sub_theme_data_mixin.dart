@@ -1,6 +1,7 @@
-import 'package:chatgpt/configs/themes/ui_parameters.dart';
 import 'package:flutter/material.dart';
-import 'package:chatgpt/configs/themes/app_color.dart';
+
+import './ui_parameters.dart';
+import './app_color.dart';
 
 //mixin is used to inherit multiple classes in dart
 mixin SubThemeData {
@@ -23,21 +24,32 @@ mixin SubThemeData {
     ));
   }
 
-  InputDecorationTheme getInputDecorationTheme() {
-    return InputDecorationTheme(
-      fillColor: botChatColorDark,
-      filled: UIParameters.isDarkMode() ? true : false,
+  InputDecorationTheme getInputDecorationLightTheme() {
+    return const InputDecorationTheme(
       enabledBorder: OutlineInputBorder(
         borderSide: BorderSide(
-          color:
-              UIParameters.isDarkMode() ? Colors.transparent : Colors.black26,
+          color: Colors.black26,
+        ),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: Colors.black38),
+      ),
+    );
+  }
+
+  InputDecorationTheme getInputDecorationDarkTheme() {
+    return const InputDecorationTheme(
+      fillColor: botChatColorDark,
+      filled: true,
+      enabledBorder: OutlineInputBorder(
+        borderSide: BorderSide(
+          color: Colors.transparent,
         ),
       ),
       focusedBorder: OutlineInputBorder(
         borderSide: BorderSide(
-            color: UIParameters.isDarkMode()
-                ? Colors.transparent
-                : Colors.black38),
+          color: Colors.transparent,
+        ),
       ),
     );
   }

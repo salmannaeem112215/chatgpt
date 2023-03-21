@@ -17,7 +17,7 @@ class LightTheme with SubThemeData {
       cardColor: cardColorLight,
       drawerTheme: const DrawerThemeData(backgroundColor: drawerColor),
       // iconTheme: getIconTheme(),
-      inputDecorationTheme: getInputDecorationTheme(),
+      inputDecorationTheme: getInputDecorationLightTheme(),
       iconButtonTheme: getIconButtonTheme(),
       textTheme: getTextThemes()
           .apply(bodyColor: textColorLight, displayColor: textColorLight),

@@ -17,7 +17,7 @@ class DarkTheme with SubThemeData {
         cardColor: cardColorDark,
         drawerTheme: const DrawerThemeData(backgroundColor: drawerColor),
         // iconTheme: getIconTheme(),
-        inputDecorationTheme: getInputDecorationTheme(),
+        inputDecorationTheme: getInputDecorationDarkTheme(),
         iconButtonTheme: getIconButtonTheme(),
         textTheme: getTextThemes()
             .apply(bodyColor: textColorDark, displayColor: textColorDark));

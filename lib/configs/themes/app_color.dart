@@ -1,4 +1,6 @@
+import 'package:chatgpt/controllers/theme_controller.dart';
 // ignore: depend_on_referenced_packages
+import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
 import './ui_parameters.dart';
@@ -35,11 +37,5 @@ const Color userChatColorDark = Colors.transparent;
 // const Color userChatColorDark = Color(0xFF353541);
 const Color botChatColorDark = Color(0xFF454654);
 
-Color customUserChatColor(BuildContext context) =>
-    UIParameters.isDarkMode() ? userChatColorDark : userChatColorLight;
-
-Color customBotChatColor(BuildContext context) =>
-    UIParameters.isDarkMode() ? botChatColorDark : botChatColorLight;
-
-Color customCursorColor(BuildContext context) =>
-    UIParameters.isDarkMode() ? textColorDark : textColorLight;
+const customBotChatBorder = Border.symmetric(
+    horizontal: BorderSide(color: Color(0x1D000000), width: 1));

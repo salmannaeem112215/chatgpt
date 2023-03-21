@@ -1,11 +1,9 @@
 // ignore: depend_on_referenced_packages
 import 'package:get/get.dart';
-import 'package:chatgpt/models/models_model.dart';
-import 'package:chatgpt/services/api_services.dart';
-
 import 'package:flutter/material.dart';
 
-import '../constants/constants.dart';
+import '../models/models_model.dart';
+import '../services/api_services.dart';
 
 enum ModelsState { error, loading, successfull, empty }
 

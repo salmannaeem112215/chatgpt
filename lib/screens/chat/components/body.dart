@@ -1,8 +1,12 @@
 import 'dart:math';
 
+// ignore: depend_on_referenced_packages
+import 'package:chatgpt/configs/themes/ui_parameters.dart';
+import 'package:get/get.dart';
 import 'package:chatgpt/configs/themes/app_color.dart';
 import 'package:chatgpt/configs/themes/custom_text_styles.dart';
 import 'package:chatgpt/constants/constants.dart';
+import 'package:chatgpt/controllers/theme_controller.dart';
 import 'package:chatgpt/services/api_services.dart';
 import 'package:chatgpt/widgets/chat_widget.dart';
 import 'package:flutter/material.dart';
@@ -37,6 +41,7 @@ class _BodyState extends State<Body> {
 
   @override
   Widget build(BuildContext context) {
+    final ThemeController themeController = Get.find();
     return Column(children: [
       Flexible(
         child: ListView.builder(
@@ -60,8 +65,8 @@ class _BodyState extends State<Body> {
               Expanded(
                 child: TextField(
                   controller: textEditingController,
-                  cursorColor: customCursorColor(context),
-                  style: textFieldStyle(context),
+                  cursorColor: themeController.customCursorColor(context),
+                  style: themeController.textFieldStyle(context),
                   decoration: const InputDecoration(
                     hintText: "How Can I help you",
                   ),
@@ -72,6 +77,16 @@ class _BodyState extends State<Body> {
               ),
               IconButton(
                 onPressed: () => updateModels(),
+                icon: const Icon(
+                  Icons.send,
+                ),
+              ),
+              IconButton(
+                onPressed: () {
+                  Get.changeThemeMode(
+                      Get.isDarkMode ? ThemeMode.light : ThemeMode.dark);
+                  themeController.isDark.value = !themeController.isDark.value;
+                },
                 icon: const Icon(
                   Icons.send,
                 ),

@@ -39,7 +39,6 @@ List<DropdownMenuItem<String>>? getModelsDropDownItem(
       List<DropdownMenuItem<String>>.generate(
     models.length,
     (index) {
-      print(models[index].id);
       return DropdownMenuItem(
         value: models[index].id,
         child: TextWidget(
