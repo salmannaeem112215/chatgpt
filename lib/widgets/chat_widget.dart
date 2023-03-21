@@ -1,3 +1,4 @@
+import 'package:chatgpt/configs/themes/app_color.dart';
 import 'package:chatgpt/constants/constants.dart';
 import 'package:chatgpt/services/assets_manager.dart';
 import 'package:chatgpt/widgets/text_widget.dart';
@@ -14,7 +15,7 @@ class ChatWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: chatIndex == 0 ? cardColor : scaffoldBackgroundColor,
+      color: chatIndex == 0 ? primaryColorDark : cardColorDark,
       child: Padding(
         padding: const EdgeInsets.all(8),
         child: Row(

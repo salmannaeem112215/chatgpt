@@ -1,3 +1,4 @@
+import 'package:chatgpt/configs/themes/app_color.dart';
 import 'package:chatgpt/widgets/models_drop_down_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +11,7 @@ class Services {
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
         ),
-        backgroundColor: scaffoldBackgroundColor,
+        backgroundColor: primaryColorDark,
         context: context,
         builder: (context) {
           return Padding(

@@ -1,3 +1,4 @@
+import 'package:chatgpt/configs/themes/app_color.dart';
 import 'package:flutter/material.dart';
 
 import '../constants/constants.dart';
@@ -55,7 +56,7 @@ class _ModelsDropDownWidgetState extends State<ModelsDropDownWidget> {
                   fontSize: 15,
                 ))),
         value: currentModel,
-        dropdownColor: scaffoldBackgroundColor,
+        dropdownColor: primaryColorDark,
         iconEnabledColor: Colors.white,
         onChanged: (value) {
           setState(() {

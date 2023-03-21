@@ -18,14 +18,9 @@ class _ChatScreenState extends State<ChatScreen> {
     return Scaffold(
       appBar: AppBar(
         elevation: 2,
-        leading: Padding(
-          padding: const EdgeInsets.all(8),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(appBarIconRadius),
-            child: Image.asset(
-              AssetsManager.openaiLogo,
-            ),
-          ),
+        leading: IconButton(
+          onPressed: () {},
+          icon: const Icon(Icons.menu),
         ),
         title: const Text('ChatGpt'),
         actions: [
@@ -35,7 +30,6 @@ class _ChatScreenState extends State<ChatScreen> {
             },
             icon: const Icon(
               Icons.more_vert_rounded,
-              color: Colors.white,
             ),
           ),
         ],

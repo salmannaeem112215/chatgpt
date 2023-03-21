@@ -44,42 +44,41 @@ class _BodyState extends State<Body> {
             ),
           ),
         ),
-        if (_isTyping) ...[
-          const SpinKitThreeBounce(
-            color: Colors.white,
-            size: 18,
-          ),
-          const SizedBox(height: 15),
-          Material(
-            color: cardColor,
-            child: Padding(
-              padding: textFieldPadding,
-              child: Row(
-                children: [
-                  Expanded(
-                    child: TextField(
-                      style: const TextStyle(color: Colors.white),
-                      controller: textEditingController,
-                      onSubmitted: (value) {
-                        print('hi');
-                        // TODO send message
-                      },
-                      decoration: const InputDecoration.collapsed(
-                          hintText: "How Can I help you",
-                          hintStyle: TextStyle(color: Colors.grey)),
-                    ),
+        // if (_isTyping) ...[
+        const SpinKitThreeBounce(
+          color: Colors.white,
+          size: 18,
+        ),
+        const SizedBox(height: 15),
+        Material(
+          // color: cardColor,
+          child: Padding(
+            padding: textFieldPadding,
+            child: Row(
+              children: [
+                Expanded(
+                  child: TextField(
+                    style: const TextStyle(color: Colors.white),
+                    controller: textEditingController,
+                    onSubmitted: (value) {
+                      print('hi');
+                      // TODO send message
+                    },
+                    decoration: const InputDecoration.collapsed(
+                        hintText: "How Can I help you",
+                        hintStyle: TextStyle(color: Colors.grey)),
                   ),
-                  IconButton(
-                      onPressed: () => updateModels(),
-                      icon: const Icon(
-                        Icons.send,
-                        color: Colors.white,
-                      ))
-                ],
-              ),
+                ),
+                IconButton(
+                    onPressed: () => updateModels(),
+                    icon: const Icon(
+                      Icons.send,
+                      color: Colors.white,
+                    ))
+              ],
             ),
-          )
-        ]
+          ),
+        ),
       ],
     );
   }
