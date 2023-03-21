@@ -2,13 +2,11 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
-import './constants/constants.dart';
-import './screens/chat/chat_screen.dart';
 import './binding/initial_bindings.dart';
 import './routes/routes.dart';
-import 'configs/themes/app_dark_theme.dart';
-import 'configs/themes/app_light_theme.dart';
-import 'controllers/theme_controller.dart';
+import './configs/themes/app_dark_theme.dart';
+import './configs/themes/app_light_theme.dart';
+import './controllers/theme_controller.dart';
 
 void main() {
   // Get x Controller initialization
@@ -29,8 +27,8 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        theme: LightTheme().buildLigtTheme(),
-        // theme: DarkTheme().buildDarkTheme(),
+        // theme: LightTheme().buildLigtTheme(),
+        theme: DarkTheme().buildDarkTheme(),
         getPages: AppRoutes.routes());
   }
 }

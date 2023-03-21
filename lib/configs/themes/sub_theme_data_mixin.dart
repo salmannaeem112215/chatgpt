@@ -1,3 +1,4 @@
+import 'package:chatgpt/configs/themes/ui_parameters.dart';
 import 'package:flutter/material.dart';
 import 'package:chatgpt/configs/themes/app_color.dart';
 
@@ -23,12 +24,20 @@ mixin SubThemeData {
   }
 
   InputDecorationTheme getInputDecorationTheme() {
-    return const InputDecorationTheme(
+    return InputDecorationTheme(
+      fillColor: botChatColorDark,
+      filled: UIParameters.isDarkMode() ? true : false,
       enabledBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: Colors.black26),
+        borderSide: BorderSide(
+          color:
+              UIParameters.isDarkMode() ? Colors.transparent : Colors.black26,
+        ),
       ),
       focusedBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: Colors.black38),
+        borderSide: BorderSide(
+            color: UIParameters.isDarkMode()
+                ? Colors.transparent
+                : Colors.black38),
       ),
     );
   }
