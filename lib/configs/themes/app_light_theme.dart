@@ -12,11 +12,12 @@ class LightTheme with SubThemeData {
         backgroundColor: primaryColorDark,
         foregroundColor: iconColor,
       ),
-      primaryColor: primaryColorLight,
+      primaryColor: primaryColorDark,
+      scaffoldBackgroundColor: primaryColorLight,
       cardColor: cardColorLight,
       drawerTheme: const DrawerThemeData(backgroundColor: drawerColor),
-      //copy with is used to use default settings
       // iconTheme: getIconTheme(),
+      inputDecorationTheme: getInputDecorationTheme(),
       iconButtonTheme: getIconButtonTheme(),
       textTheme: getTextThemes()
           .apply(bodyColor: textColorLight, displayColor: textColorLight),

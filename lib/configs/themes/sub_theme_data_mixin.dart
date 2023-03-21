@@ -14,15 +14,22 @@ mixin SubThemeData {
     );
   }
 
-  // IconThemeData getIconTheme() {
-  //   return const IconThemeData(color: iconColor, size: 16);
-  // }
-
   IconButtonThemeData getIconButtonTheme() {
     return IconButtonThemeData(
         style: IconButton.styleFrom(
       foregroundColor: iconColor,
       hoverColor: iconHoverColor,
     ));
+  }
+
+  InputDecorationTheme getInputDecorationTheme() {
+    return const InputDecorationTheme(
+      enabledBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: Colors.black26),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: Colors.black38),
+      ),
+    );
   }
 }

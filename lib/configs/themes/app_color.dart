@@ -40,3 +40,6 @@ Color customUserChatColor(BuildContext context) =>
 
 Color customBotChatColor(BuildContext context) =>
     UIParameters.isDarkMode() ? botChatColorDark : botChatColorLight;
+
+Color customCursorColor(BuildContext context) =>
+    UIParameters.isDarkMode() ? textColorDark : textColorLight;

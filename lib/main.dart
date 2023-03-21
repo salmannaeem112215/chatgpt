@@ -29,8 +29,8 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        // theme: LightTheme().buildLigtTheme(),
-        theme: DarkTheme().buildDarkTheme(),
+        theme: LightTheme().buildLigtTheme(),
+        // theme: DarkTheme().buildDarkTheme(),
         getPages: AppRoutes.routes());
   }
 }

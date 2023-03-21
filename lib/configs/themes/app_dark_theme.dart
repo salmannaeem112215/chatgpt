@@ -1,4 +1,3 @@
-import 'package:chatgpt/configs/themes/custom_text_styles.dart';
 import 'package:flutter/material.dart';
 
 import './sub_theme_data_mixin.dart';
@@ -9,14 +8,16 @@ class DarkTheme with SubThemeData {
   ThemeData buildDarkTheme() {
     final ThemeData systemDarkTheme = ThemeData.dark();
     return systemDarkTheme.copyWith(
-        primaryColor: Colors.amber,
         appBarTheme: const AppBarTheme(
           backgroundColor: primaryColorDark,
           foregroundColor: iconColor,
         ),
-        scaffoldBackgroundColor: Color(0xff353541),
+        scaffoldBackgroundColor: primaryColorDark,
+        primaryColor: primaryColorDark,
         cardColor: cardColorDark,
+        drawerTheme: const DrawerThemeData(backgroundColor: drawerColor),
         // iconTheme: getIconTheme(),
+        inputDecorationTheme: getInputDecorationTheme(),
         iconButtonTheme: getIconButtonTheme(),
         textTheme: getTextThemes()
             .apply(bodyColor: textColorDark, displayColor: textColorDark));

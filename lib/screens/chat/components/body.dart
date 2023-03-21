@@ -1,3 +1,7 @@
+import 'dart:math';
+
+import 'package:chatgpt/configs/themes/app_color.dart';
+import 'package:chatgpt/configs/themes/custom_text_styles.dart';
 import 'package:chatgpt/constants/constants.dart';
 import 'package:chatgpt/services/api_services.dart';
 import 'package:chatgpt/widgets/chat_widget.dart';
@@ -45,37 +49,34 @@ class _BodyState extends State<Body> {
       ),
       if (_isTyping) ...[
         const SpinKitThreeBounce(
-          color: Colors.white,
+          color: iconColor,
           size: 18,
         ),
-        const SizedBox(height: 15),
-        Material(
-          // color: cardColor,
-          child: Padding(
-            padding: textFieldPadding,
-            child: Row(
-              children: [
-                Expanded(
-                  child: TextField(
-                    style: const TextStyle(color: Colors.white),
-                    controller: textEditingController,
-                    onSubmitted: (value) {
-                      print('hi');
-                      // TODO send message
-                    },
-                    decoration: const InputDecoration.collapsed(
-                        hintText: "How Can I help you",
-                        hintStyle: TextStyle(color: Colors.grey)),
+        // TextField
+        Padding(
+          padding: const EdgeInsets.all(8),
+          child: Row(
+            children: [
+              Expanded(
+                child: TextField(
+                  controller: textEditingController,
+                  cursorColor: customCursorColor(context),
+                  style: textFieldStyle(context),
+                  decoration: const InputDecoration(
+                    hintText: "How Can I help you",
                   ),
+                  onSubmitted: (value) {
+                    // TODO send message
+                  },
                 ),
-                IconButton(
-                    onPressed: () => updateModels(),
-                    icon: const Icon(
-                      Icons.send,
-                      color: Colors.white,
-                    ))
-              ],
-            ),
+              ),
+              IconButton(
+                onPressed: () => updateModels(),
+                icon: const Icon(
+                  Icons.send,
+                ),
+              ),
+            ],
           ),
         ),
       ],

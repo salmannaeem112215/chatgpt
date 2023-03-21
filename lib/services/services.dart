@@ -1,4 +1,5 @@
 import 'package:chatgpt/configs/themes/app_color.dart';
+import 'package:chatgpt/configs/themes/custom_text_styles.dart';
 import 'package:chatgpt/widgets/models_drop_down_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -20,10 +21,13 @@ class Services {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: const [
                 Flexible(
-                  child: TextWidget(
-                    label: "Chosen Model: ",
-                    fontSize: 16,
+                  child: Text(
+                    "Chosen Model: ",
+                    style: msTitleText,
                   ),
+                ),
+                SizedBox(
+                  width: 2,
                 ),
                 Flexible(
                   flex: 2,
